@@ -15,6 +15,17 @@ Workflow utløses automatisk hver gang jeg pusher endringer til main branch. Der
 AWS-påloggingsinformasjon er lagret i GitHub Secrets AWS_ACCESS_KEY_ID og AWS_SECRET_ACCESS_KEY noe som betyr at jeg ikke trenger å inkludere den direkte i koden.
 Link til selve kjøring https://github.com/mentolq1337/dev-eksamen-2026/actions/runs/42641738882
 
+Oppgave 2A)
+
+service_url = https://wi-55cefe15590a47ba9fd78ea6eaaf7f39.ecs.eu-west-1.on.aws
+
+Oppgave 2B)
+State er i S3-bøtten pgr301-terraform-state.
+Key: wishifai/20/terraform.tfstate
+Slik unngår jeg konflikt med andre studenter.
+
+Oppgave 2C)
+
 
 
 
