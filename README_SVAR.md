@@ -13,5 +13,8 @@ B)
 Jeg har opprettet en github actions workflow i filen .github/workflows/deploy.yml.
 Workflow utløses automatisk hver gang jeg pusher endringer til main branch. Deretter bygges et Docker image som pusher til repositoriet wishifai-tomek` i AWS ECR.
 AWS-påloggingsinformasjon er lagret i GitHub Secrets AWS_ACCESS_KEY_ID og AWS_SECRET_ACCESS_KEY noe som betyr at jeg ikke trenger å inkludere den direkte i koden.
+Link til selve kjøring https://github.com/mentolq1337/dev-eksamen-2026/actions/runs/42641738882
+
+
 
 
