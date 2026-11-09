@@ -47,10 +47,5 @@ jobs:
 
       - run: terraform fmt -check
       - run: terraform init
-      - run: terraform apply -auto-approve -var="image_tag=${{ github.sha }}"cd /workspaces/dev-eksamen-2026
-cd infra
-terraform fmt
-cd ..
-git add .github/workflows/deploy.yml infra/main.tf README_SVAR.md
-git commit -m "Add terraform job to workflow"
-git push
+      - run: |
+          terraform apply -auto-approve -var=image_tag=${{ github.sha }}
