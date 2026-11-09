@@ -8,7 +8,7 @@ terraform {
 
   backend "s3" {
     bucket = "pgr301-terraform-state"
-    key    = "wishifai/tomek/terraform.tfstate"
+    key    = "wishifai/20/terraform.tfstate"
     region = "eu-west-1"
   }
 }
@@ -16,3 +16,4 @@ terraform {
 provider "aws" {
   region = "eu-west-1"
 }
+
