@@ -13,7 +13,10 @@ docker run --rm -p 9999:8080 \
 Oppgave 1B)
 Jeg har opprettet en github actions workflow i filen .github/workflows/deploy.yml.
 Workflow utløses automatisk hver gang jeg pusher endringer til main branch. Deretter bygges et Docker image som pusher til repositoriet wishifai-tomek` i AWS ECR.
-AWS-påloggingsinformasjon er lagret i GitHub Secrets AWS_ACCESS_KEY_ID og AWS_SECRET_ACCESS_KEY noe som betyr at jeg ikke trenger å inkludere den direkte i koden.
+AWS-påloggingsinformasjon er lagret i GitHub Secrets AWS_ACCESS_KEY_ID og AWS_SECRET_ACCESS_KEY noe som betyr at jeg ikke trenger å 
+siste alene er ikke nok.Jeg tagger med SHA.
+SHA gjør at jeg vet hvilken commit som kjører.
+latest alene er ikke nok.
 Link til selve kjøring https://github.com/mentolq1337/dev-eksamen-2026/actions/runs/42641738882
 
 Oppgave 2A)
@@ -23,8 +26,8 @@ URL = https://wi-55cefe15590a47ba9fd78ea6eaaf7f39.ecs.eu-west-1.on.aws
 
 Oppgave 2B)
 State er i S3 pgr301-terraform-state.
-Key: wishifai/20/terraform.tfstate
 Slik unngår jeg konflikt med andre.
+Key: wishifai/20/terraform.tfstate
 
 Oppgave 2C)
 Terraform ligger i samme workflow som build og bruker needs: build for å vente til alt er up. På den måten blir imaget bygget og pushet først før terraform apply kjører i gang med commit SHA som image_tag. Hvis de to hadde kjørt samtidig kune ECS risikere å prøve å hente et bilde som ikke finnes i ECR. I tillegg har jeg lagt inn terraform fmt -check så pipelinen tryner med en gang hvis koden ikke er riktig formatert.
